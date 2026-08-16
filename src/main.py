@@ -5,6 +5,10 @@ from src.modules.tenants.router import router as tenants_router
 from src.modules.auth.router import router as auth_router
 from src.modules.catalog.router import router as catalog_router
 from src.modules.topology.router import router as topology_router   
+from src.modules.inventory.router import router as inventory_router
+
+
+
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -26,6 +30,11 @@ app.include_router(tenants_router, prefix="/api/v1")
 app.include_router(auth_router, prefix="/api/v1")  
 app.include_router(catalog_router, prefix="/api/v1")
 app.include_router(topology_router, prefix="/api/v1")
+app.include_router(inventory_router, prefix="/api/v1")  
+
+
+
+
 
 @app.get("/health", tags=["Health"])
 async def health_check():

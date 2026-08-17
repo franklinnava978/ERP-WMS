@@ -7,7 +7,7 @@ from src.modules.catalog.router import router as catalog_router
 from src.modules.topology.router import router as topology_router   
 from src.modules.inventory.router import router as inventory_router
 from src.modules.orders.router import router as orders_router
-
+from src.modules.integrations.router import router as integrations_router   
 
 
 
@@ -27,12 +27,13 @@ app.add_middleware(
 )
 
 # Inclusión de routers por módulos
-app.include_router(tenants_router, prefix="/api/v1")
-app.include_router(auth_router, prefix="/api/v1")  
-app.include_router(catalog_router, prefix="/api/v1")
-app.include_router(topology_router, prefix="/api/v1")
-app.include_router(inventory_router, prefix="/api/v1")  
-app.include_router(orders_router, prefix="/api/v1")
+app.include_router(tenants_router, prefix="/api/v1")       # Router para gestión de tenants y multi-tenancy
+app.include_router(auth_router, prefix="/api/v1")          # Router para autenticación y autorización
+app.include_router(catalog_router, prefix="/api/v1")       # Router para catálogo y productos
+app.include_router(topology_router, prefix="/api/v1")      # Router para topología y estructura
+app.include_router(inventory_router, prefix="/api/v1")     # Router para inventario y stock
+app.include_router(orders_router, prefix="/api/v1")        # Router para órdenes y despacho
+app.include_router(integrations_router, prefix="/api/v1")  # Router para integraciones y webhooks   
 
 
 

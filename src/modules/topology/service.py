@@ -1,3 +1,4 @@
+from typing import Optional
 import uuid
 from fastapi import HTTPException, status
 from sqlmodel import select

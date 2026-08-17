@@ -6,6 +6,7 @@ from src.modules.auth.router import router as auth_router
 from src.modules.catalog.router import router as catalog_router
 from src.modules.topology.router import router as topology_router   
 from src.modules.inventory.router import router as inventory_router
+from src.modules.orders.router import router as orders_router
 
 
 
@@ -31,6 +32,7 @@ app.include_router(auth_router, prefix="/api/v1")
 app.include_router(catalog_router, prefix="/api/v1")
 app.include_router(topology_router, prefix="/api/v1")
 app.include_router(inventory_router, prefix="/api/v1")  
+app.include_router(orders_router, prefix="/api/v1")
 
 
 
